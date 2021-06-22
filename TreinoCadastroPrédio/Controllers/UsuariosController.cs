@@ -37,7 +37,7 @@ namespace TreinoCadastroPrédio.Controllers
 
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public async IActionResult  Registro(RegistroViewModel model, IFormFile  foto)
+        public async Task<IActionResult>  Registro(RegistroViewModel model, IFormFile  foto)
         {
             if (ModelState.IsValid)
             {

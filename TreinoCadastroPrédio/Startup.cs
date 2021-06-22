@@ -1,4 +1,5 @@
-﻿using GerendiadorCondominos.DAL;
+﻿using GerenciadorCondominios.BLL.Models;
+using GerendiadorCondominos.DAL;
 using GerendiadorCondominos.DAL.Intefaces;
 using GerendiadorCondominos.DAL.Repositorios;
 using Microsoft.AspNetCore.Builder;
@@ -29,6 +30,11 @@ namespace TreinoCadastroPrédio
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<Contexto>(opçoes => opçoes.UseSqlServer(Configuration.GetConnectionString("ConexaoDB")));
+            services.AddIdentity<Usuario, Funcao>().AddEntityFrameworkStores<Contexto>();
+
+            services.AddAuthentication();
+            services.AddAuthorization();
+            
             services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
             
             services.AddControllersWithViews();
