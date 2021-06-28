@@ -61,6 +61,31 @@ namespace GerendiadorCondominos.DAL.Repositorios
             }
         }
 
+        public async Task DeslogarUsuario()
+        {
+            try
+            {
+                await _gerenciadorLogin.SignOutAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Usuario> PegarUsuarioPorEmail(string email)
+        {
+            try
+            {
+                return await _gerenciadorUsuario.FindByEmailAsync(email);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public int VerificarSeExisteRegistro()
         {
             try

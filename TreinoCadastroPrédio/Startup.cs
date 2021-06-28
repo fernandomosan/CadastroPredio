@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TreinoCadastroPrédio.Extensions;
 
 namespace TreinoCadastroPrédio
 {
@@ -34,9 +35,12 @@ namespace TreinoCadastroPrédio
 
             services.AddAuthentication();
             services.AddAuthorization();
-            
-            services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
-            
+
+            services.ConfigurarRepositorio();
+            services.ConfiguraNomeUsuario();
+            services.ConfiguraSenhaUsuario();
+            services.ConfigurarCookies();
+
             services.AddControllersWithViews();
             
         }

@@ -1,11 +1,22 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace TreinoCadastroPrédio.Extensions
 {
-    public class ConfiguracaoCookiesExtension
+    public static class ConfiguracaoCookiesExtension
     {
+        public static void ConfigurarCookies(this IServiceCollection services)
+        {
+            services.ConfigureApplicationCookie(opcoes =>
+            {
+                opcoes.Cookie.Name = "IdentityCookie";
+                opcoes.Cookie.HttpOnly = true;
+                opcoes.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                opcoes.LoginPath = "/Usuarios/Login";
+            });
+        }
     }
 }

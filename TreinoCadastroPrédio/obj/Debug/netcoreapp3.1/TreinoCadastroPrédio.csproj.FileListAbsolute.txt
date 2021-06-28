@@ -244,6 +244,7 @@ D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netco
 D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Analise.cshtml.g.cs
+D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Login.cshtml.g.cs
 D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Registro.cshtml.g.cs
 D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
