@@ -1,4 +1,14 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Microsoft.AspNetCore.Identity
+@using GerenciadorCondominios.BLL.Models
+@inject SignInManager<Usuario> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-action="Logout" asp-controller="Usuarios" id="formularioLogout">
+        <ul>
+            <li>
+                <a class="nav-link white-text" style="cursor:pointer" onclick="document.getElementById('formularioLogout').submit();">Logout</a>
+            </li>
+        </ul>
+    </form>
+}

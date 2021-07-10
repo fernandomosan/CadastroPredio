@@ -255,3 +255,6 @@ D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netco
 D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netcoreapp3.1\TreinoCadastroPrédio.dll
 D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netcoreapp3.1\TreinoCadastroPrédio.pdb
 D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netcoreapp3.1\TreinoCadastroPrédio.genruntimeconfig.cache
+D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Logout.cshtml.g.cs
+D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Reprovado.cshtml.g.cs
+D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\TreinoCadastroPrédio\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Index.cshtml.g.cs
