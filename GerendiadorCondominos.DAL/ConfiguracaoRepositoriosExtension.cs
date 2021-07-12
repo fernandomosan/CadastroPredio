@@ -12,6 +12,7 @@ namespace GerendiadorCondominos.DAL
         public static void ConfigurarRepositorio(this IServiceCollection services)
         {
             services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
+            services.AddTransient<IFuncaoRepositorio, FuncaoRepositorio>();
         }
     }
 }

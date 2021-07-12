@@ -16,17 +16,19 @@ namespace TreinoCadastroPrédio.Controllers
     public class UsuariosController : Controller
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
+        private readonly IFuncaoRepositorio _funcaoRepositorio;
         private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public UsuariosController(IUsuarioRepositorio usuarioRepositorio, IWebHostEnvironment webHostEnvironment)
+        public UsuariosController(IUsuarioRepositorio usuarioRepositorio, IWebHostEnvironment webHostEnvironment, IFuncaoRepositorio funcaoRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
             _webHostEnvironment = webHostEnvironment;
+            _funcaoRepositorio = funcaoRepositorio;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _usuarioRepositorio.PegarTodos());
         }
 
         [HttpGet]
@@ -169,6 +171,69 @@ namespace TreinoCadastroPrédio.Controllers
         public IActionResult Analise(string nome)
         {
             return View(nome);
+        }
+
+        public IActionResult Reprovado(string nome)
+        {
+            return View(nome);
+        }
+
+        public async Task<JsonResult> AprovarUsuario(string usuarioId)
+        {
+            Usuario usuario = await _usuarioRepositorio.PegarPeloId(usuarioId);
+            usuario.Status = StatusConta.Aprovado;
+            await _usuarioRepositorio.IncluirUsuarioEmFuncao(usuario, "Morador");
+            await _usuarioRepositorio.AtualizarUsuario(usuario);
+
+            return Json(true);
+        }
+
+        public async Task<JsonResult> ReprovarUsuario(string usuarioId)
+        {
+            Usuario usuario = await _usuarioRepositorio.PegarPeloId(usuarioId);
+            usuario.Status = StatusConta.reprovado;
+            await _usuarioRepositorio.AtualizarUsuario(usuario);
+
+            return Json(true);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GerenciarUsuario(string usuarioId, string nome)
+        {
+            if (usuarioId == null)
+                return NotFound();
+
+            TempData["usuarioId"] = usuarioId;
+            ViewBag.Nome = nome;
+            Usuario usuario = await _usuarioRepositorio.PegarPeloId(usuarioId);
+
+            if (usuario == null)
+                return NotFound();
+
+            List<FuncaoUsuarioViewModel> viewModel = new List<FuncaoUsuarioViewModel>();
+
+            foreach (Funcao funcao in await _funcaoRepositorio.PegarTodos())
+            {
+                FuncaoUsuarioViewModel model = new FuncaoUsuarioViewModel
+                {
+                    FuncaoId = funcao.Id,
+                    Nome = funcao.Name,
+                    descricao = funcao.Descirçao
+                };
+
+                if (await _usuarioRepositorio.VarificarSeUsuarioEstaEmFuncao(usuario, funcao.Name))
+                {
+                    model.isSelecionado = true;
+                }
+                else
+                {
+                    model.isSelecionado = false;
+                }
+
+                viewModel.Add(model);
+            }
+
+            return View(viewModel);
         }
     }
 }

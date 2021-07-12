@@ -97,5 +97,70 @@ namespace GerendiadorCondominos.DAL.Repositorios
                 throw ex;
             }
         }
+
+        public async Task AtualizarUsuario(Usuario usuario)
+        {
+            try
+            {
+                await _gerenciadorUsuario.UpdateAsync(usuario);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex; 
+            }
+        }
+
+        public async Task<bool> VarificarSeUsuarioEstaEmFuncao(Usuario usuario, string funcao)
+        {
+            try
+            {
+                return await _gerenciadorUsuario.IsInRoleAsync(usuario, funcao);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public async Task<IEnumerable<string>> PegarFuncoesUsuario(Usuario usuario)
+        {
+            try
+            {
+                return await _gerenciadorUsuario.GetRolesAsync(usuario);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public async Task<IdentityResult> RemoverFuncoesUsuario(Usuario usuario, IEnumerable<string> funcoes)
+        {
+            try
+            {
+                return await _gerenciadorUsuario.RemoveFromRolesAsync(usuario, funcoes);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public async Task<IdentityResult> IncluirUsuarioEmFuncoes(Usuario usuario, IEnumerable<string> funcoes)
+        {
+            try
+            {
+                return await _gerenciadorUsuario.AddToRolesAsync(usuario, funcoes);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
