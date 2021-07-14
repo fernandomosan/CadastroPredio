@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GerendiadorCondominos.DAL.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20210504214433_criacaoDB")]
-    partial class criacaoDB
+    [Migration("20210714002501_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -138,24 +138,24 @@ namespace GerendiadorCondominos.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5b65e01e-52b9-41e8-affb-6c5ad3c1648b",
-                            ConcurrencyStamp = "a68c2212-bf1b-4dde-8a69-c36c6c0f3a14",
+                            Id = "24eb4457-93ae-4df5-a2a4-d6b13cb3c01a",
+                            ConcurrencyStamp = "715b1e03-7813-409d-a7af-d03065a13065",
                             Descirçao = "Morador do Prédio",
                             Name = "Morador",
                             NormalizedName = "MORADOR"
                         },
                         new
                         {
-                            Id = "a83c2637-3d05-46b7-8804-3bc0d1ed484a",
-                            ConcurrencyStamp = "7ee507a4-2ee1-4d5a-95b8-3d431306326b",
+                            Id = "f16d5d05-7657-4d39-9894-c6b241651a70",
+                            ConcurrencyStamp = "d41abfed-f802-40d3-8ddd-f9773fef9b56",
                             Descirçao = "Sindico do Prédio",
                             Name = "Sindico",
                             NormalizedName = "SINDICO"
                         },
                         new
                         {
-                            Id = "19238917-a2ce-4faf-94c1-b5d4cce89a86",
-                            ConcurrencyStamp = "71557df9-6a48-4691-b428-2eac1473634f",
+                            Id = "0f3e052c-a3ae-45d3-b6b6-cf09d5fe174d",
+                            ConcurrencyStamp = "55e3e8c1-f692-4f43-af31-a34ad3a6ea18",
                             Descirçao = "Administrador do Prédio",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"

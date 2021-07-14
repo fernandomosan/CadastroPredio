@@ -8,8 +8,11 @@ namespace GerendiadorCondominos.DAL.Repositorios
 {
     public class FuncaoRepositorio : RepositorioGenerico<Funcao>, IFuncaoRepositorio
     {
+        private readonly Contexto _contexto;
+
         public FuncaoRepositorio(Contexto contexto) : base(contexto)
         {
+            _contexto = contexto;
         }
     }
 }

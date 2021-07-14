@@ -19,7 +19,7 @@ namespace TreinoCadastroPrédio.Controllers
         private readonly IFuncaoRepositorio _funcaoRepositorio;
         private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public UsuariosController(IUsuarioRepositorio usuarioRepositorio, IWebHostEnvironment webHostEnvironment, IFuncaoRepositorio funcaoRepositorio)
+        public UsuariosController(IUsuarioRepositorio usuarioRepositorio, IFuncaoRepositorio funcaoRepositorio, IWebHostEnvironment webHostEnvironment)
         {
             _usuarioRepositorio = usuarioRepositorio;
             _webHostEnvironment = webHostEnvironment;
