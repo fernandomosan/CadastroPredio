@@ -3,7 +3,7 @@
     ViewData["Title"] = "Atualizar funções do usuário" + @ViewBag.Nome;
 }
 
-<form asp-action="GerenciarUsuarios" method="post">
+<form asp-action="GerenciarUsuario" method="post">
     <div asp-validation-summary="All"></div>
 
     <div class="collection with-header">
@@ -22,6 +22,11 @@
                 </label>
                 <br />
             }
+        </div>
+
+        <div class="collection-item">
+            <input type="submit" value="Atualizar" class="btn-small blue darken-3" /> &emsp;
+            <a asp-controller="Usuarios" asp-action="Index">Voltar</a> 
         </div>
 
     </div>
