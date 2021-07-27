@@ -14,3 +14,4 @@ D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\GerenciadorCondominios.BLL\obj\Debug\
 D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\GerenciadorCondominios.BLL\obj\Debug\netcoreapp3.1\GerenciadorCondominios.BLL.csproj.CoreCompileInputs.cache
 D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\GerenciadorCondominios.BLL\obj\Debug\netcoreapp3.1\GerenciadorCondominios.BLL.dll
 D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\GerenciadorCondominios.BLL\obj\Debug\netcoreapp3.1\GerenciadorCondominios.BLL.pdb
+D:\ESTUDOSC#\Treinos\TreinoCadastroPrédio\GerenciadorCondominios.BLL\obj\Debug\netcoreapp3.1\GerenciadorCondominios.BLL.csprojAssemblyReference.cache
